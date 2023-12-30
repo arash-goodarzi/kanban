@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 interface Props {
   changeBackgroundColor: (color: string) => void;
@@ -6,7 +6,7 @@ interface Props {
 
 function Header(props: Props) {
   const { changeBackgroundColor } = props;
-  const [palette, setPalette] = useState<string[]>(['bg-red-400 text-white','bg-amber-200 text-black','bg-yellow-100 text-black','bg-gray-400 text-black','bg-orange-300 text-black',' bg-emerald-400 text-black','bg-gray-300 text-black','bg-lime-300 text-black']);
+  const [palette,] = useState<string[]>(['bg-red-400 text-white','bg-amber-200 text-black','bg-yellow-100 text-black','bg-gray-400 text-black','bg-orange-300 text-black',' bg-emerald-400 text-black','bg-gray-300 text-black','bg-lime-300 text-black']);
 
   const currentDate = new Date();
   const options:Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };

@@ -2,7 +2,7 @@ import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import TrashIcon from "../icons/TrashIcon"
 import { Column, Id, Task } from "../types"
 import {CSS} from "@dnd-kit/utilities"
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import PlusIcon from "../icons/PlusIcon";
 import TaskCard from "./TaskCard";
 
@@ -24,14 +24,6 @@ function ColumnContainer(props:Props) {
     
     const tasksIds = useMemo(() => tasks.map((task)=>task.id), [tasks])
 
-    const inputRef = useRef<HTMLInputElement | null>(null)
-    const handleInputFocus = () => {
-        if (inputRef.current) {
-          const length = inputRef.current.value.length;
-          inputRef.current.setSelectionRange(length, length);
-          
-        }
-      };
     const style ={
         transition,
         transform: CSS.Transform.toString(transform)
@@ -63,7 +55,6 @@ function ColumnContainer(props:Props) {
                 <div className="flex justify-center items-center bg-primaryColumnBackgroundColor px-2 py-1 rounded-full">{tasks.length}</div>
                 {!editMode && column.title}
                 {editMode && <input 
-                    ref={inputRef}
                     className="bg-black focus:border-rose-500 border rounded outline-none px-2"
                     autoFocus onBlur={()=>setEditMode(false)} onKeyDown={(e)=>{
                         if(e.key !== "Enter") return; 
