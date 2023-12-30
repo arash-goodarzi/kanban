@@ -18,7 +18,7 @@ function KanbanBoard() {
     const sensors = useSensors(useSensor(PointerSensor,{activationConstraint:{distance:10}}))
 
   return (
-    <div className='flex min-h-screen w-full m-auto items-center overflow-x-auto overflow-y-hidden px-[40px]'>
+    <div className='text-white flex h-full w-full m-auto items-center overflow-x-auto overflow-y-hidden px-[40px]'>
        <DndContext sensors={sensors} onDragStart={ondragstart} onDragEnd={onDragEnd} onDragOver={onDragOver}>
         <div className="m-auto flex gap-4">
             <div className="flex gap-4">
