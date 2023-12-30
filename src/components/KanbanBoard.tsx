@@ -18,10 +18,10 @@ function KanbanBoard() {
     const sensors = useSensors(useSensor(PointerSensor,{activationConstraint:{distance:10}}))
 
   return (
-    <div className='text-white flex h-full w-full m-auto items-center overflow-x-auto overflow-y-hidden px-[40px]'>
+    <div className='text-white flex h-full w-full m-auto items-center md:overflow-x-auto md:overflow-y-hidden px-[40px] '>
        <DndContext sensors={sensors} onDragStart={ondragstart} onDragEnd={onDragEnd} onDragOver={onDragOver}>
-        <div className="m-auto flex gap-4">
-            <div className="flex gap-4">
+        <div className="m-auto flex gap-4 md:flex-row flex-col-reverse">
+            <div className="flex gap-4 md:flex-row flex-col">
                 <SortableContext items={columnsId}>
                     {
                         columns.map((column)=>(
@@ -56,7 +56,7 @@ function KanbanBoard() {
   function createNewColumn() {
     const columnToAdd: Column ={
          id: generateId(),
-         title:`Coumn ${columns.length+1}`,
+         title:`Column ${columns.length+1}`,
 
     }
 

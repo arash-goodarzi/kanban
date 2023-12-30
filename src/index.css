@@ -1,4 +1,4 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -9,7 +9,7 @@ body,
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar:horizontal {
@@ -17,7 +17,7 @@ body,
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-rose-900 rounded-xl
+  @apply bg-rose-900 rounded-3xl 
 }
 
 .task > ::-webkit-scrollbar-thumb {
@@ -27,4 +27,3 @@ body,
 
 
 
- */

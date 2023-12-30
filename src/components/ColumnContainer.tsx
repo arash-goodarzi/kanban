@@ -60,7 +60,7 @@ function ColumnContainer(props:Props) {
             onClick={()=>setEditMode(true)}
             className="flex justify-between items-center bg-primaryMainBackgroundColor text-base h-[60px] cursor-grab rounded-md rounded-b-none p-3 font-bold border-primaryColumnBackgroundColor border-4">
             <div className="flex gap-2">
-                <div className="flex justify-center items-center bg-primaryColumnBackgroundColor px-2 py-1 rounded-full">0</div>
+                <div className="flex justify-center items-center bg-primaryColumnBackgroundColor px-2 py-1 rounded-full">{tasks.length}</div>
                 {!editMode && column.title}
                 {editMode && <input 
                     ref={inputRef}

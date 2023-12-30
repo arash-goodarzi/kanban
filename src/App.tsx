@@ -13,12 +13,12 @@ function App() {
   };
 
   return (
-    <div className={`h-screen ${backgroundColor} flex flex-col`}>
+    <div className={`min-h-screen ${backgroundColor} flex flex-col`}>
 
         <div className="h-[10%]">
           <Header changeBackgroundColor={changeBackgroundColor} />
         </div>
-        <div className="h-[90%]">
+        <div className="h-[90%] flex justify-start items-start">
           <KanbanBoard />
         </div>
     </div>
